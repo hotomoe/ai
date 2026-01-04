@@ -1,0 +1,7 @@
+services:
+  app:
+    image: ghcr.io/hotomoe/hotomoe:hotomoe
+    restart: always
+    volumes:
+      - './config.json:/ai-kor/config.json:ro'
+      - './data:/ai-kor/data'
