@@ -1,4 +1,4 @@
-FROM node:lts
+FROM node:20-bullseye
 
 RUN apt-get update && apt-get install tini --no-install-recommends -y && apt-get clean && rm -rf /var/lib/apt-get/lists/*
 
@@ -22,4 +22,4 @@ WORKDIR /ai-kor
 RUN npm install && npm run build || test -f ./built/index.js
 
 ENTRYPOINT ["/usr/bin/tini", "--"]
-CMD npm start
+CMD ["npm", "start"]
